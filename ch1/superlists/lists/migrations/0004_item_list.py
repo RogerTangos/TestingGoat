@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AddField(
             model_name='item',
-            name='user_list',
-            field=models.ForeignKey(to='lists.List', default=None),
+            name='list',
+            field=models.ForeignKey(default=None, to='lists.List'),
         ),
     ]
