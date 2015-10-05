@@ -1,3 +1,0 @@
-tips:
-
-To use python3: mkvirtualenv --python=/usr/local/bin/python3 myenv
