@@ -42,3 +42,8 @@ class ListAndItemModelsTest(TestCase):
             # Django doesn't run full validation on save, so we use this. It
             # will fail if we ever allow a blank text field in the model.
             item.full_clean()
+
+    def test_get_absolute_url(self):
+        # test to make sure Django's reverse function in Lists model is on
+        list_ = List.objects.create()
+        self.assertEqual(list_.get_absolute_url(), '/lists/%d/' % (list_.id))
