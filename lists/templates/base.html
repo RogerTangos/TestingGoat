@@ -44,6 +44,12 @@
     <script>
         /*global $, Superlists, navigator */
         $(document).ready(function () {
+            var user = " {{ user.email }}" || null;
+            var token = " {{ csrf_token }}";
+            var urls = {
+                login: "TODO",
+                logout: "TODO",
+            };
             Superlists.Accounts.initialize(navigator);
         });
     </script>
