@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 
 
 class NewVisitorTest(FunctionalTest):
+
     def test_can_start_a_list_and_retrieve_it_later(self):
         # Edith has heard about a cool new online to-do app. She goes
         # to check out its homepage
@@ -45,8 +46,9 @@ class NewVisitorTest(FunctionalTest):
         self.check_for_row_in_list_table('1: Buy peacock feathers')
 
         # Now a new user, Francis, comes along to the site.
-        # # We use a new browser session to make sure that no information
-        # # of Edith's is coming through from cookies etc
+
+        ## We use a new browser session to make sure that no information
+        ## of Edith's is coming through from cookies etc
         self.browser.quit()
         self.browser = webdriver.Firefox()
 
@@ -74,3 +76,4 @@ class NewVisitorTest(FunctionalTest):
         self.assertIn('Buy milk', page_text)
 
         # Satisfied, they both go back to sleep
+

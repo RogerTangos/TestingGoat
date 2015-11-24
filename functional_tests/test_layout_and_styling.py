@@ -1,10 +1,8 @@
 from .base import FunctionalTest
-from unittest import skip
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 
 
 class LayoutAndStylingTest(FunctionalTest):
+
     def test_layout_and_styling(self):
         # Edith goes to the home page
         self.browser.get(self.server_url)
@@ -22,8 +20,10 @@ class LayoutAndStylingTest(FunctionalTest):
         # centered there too
         inputbox.send_keys('testing\n')
         inputbox = self.get_item_input_box()
+
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
             512,
             delta=5
         )
+
